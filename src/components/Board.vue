@@ -58,7 +58,7 @@ const winner = computed(() => {
 </script>
 
 <template>
-  <section>
+  <div>
     <p v-show="!winner && winner !== 'DRAW'">Hey {{ currentPlayer }}, it's your turn</p>
     <p v-show="winner && winner !== 'DRAW'">Congratulations {{ winner }}!</p>
     <p v-show="winner === 'DRAW'">We have a draw!</p>
@@ -76,7 +76,7 @@ const winner = computed(() => {
     <div>
       <button class="reset" @click="reset">Reset</button>
     </div>
-  </section>
+  </div>
 </template>
 
 <style scoped>
