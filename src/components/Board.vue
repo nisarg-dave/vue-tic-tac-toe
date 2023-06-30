@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import Square from './Square.vue'
 
 const squares = ref(Array(9).fill(null))
-const currentPlayer = ref(Math.round(Math.random() * 1) === 1 ? 'X' : 'O')
+const currentPlayer = ref(Math.round(Math.random()) === 1 ? 'X' : 'O')
 const lines = [
   [0, 1, 2],
   [3, 4, 5],
@@ -59,9 +59,9 @@ const winner = computed(() => {
 
 <template>
   <section>
-    <p v-if="!winner && winner !== 'DRAW'">Hey {{ currentPlayer }}, it's your turn</p>
-    <p v-if="winner && winner !== 'DRAW'">Congratulations {{ winner }}!</p>
-    <p v-if="winner === 'DRAW'">We have a draw!</p>
+    <p v-show="!winner && winner !== 'DRAW'">Hey {{ currentPlayer }}, it's your turn</p>
+    <p v-show="winner && winner !== 'DRAW'">Congratulations {{ winner }}!</p>
+    <p v-show="winner === 'DRAW'">We have a draw!</p>
     <div class="grid">
       <div v-for="(square, index) in squares">
         <Square
