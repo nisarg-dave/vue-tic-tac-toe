@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(['value', 'winner', 'key', 'index'])
+const props = defineProps(['value', 'winner', 'index'])
 const emit = defineEmits(['setSquareValue'])
 
 const handleClick = () => {
